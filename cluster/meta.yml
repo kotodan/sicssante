@@ -1,0 +1,5 @@
+deploy_env: sic
+env_monitoring_id: sic
+users:
+  - depsi
+#slack_alerts_channel: alerts-swiss
