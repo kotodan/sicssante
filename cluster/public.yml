@@ -84,39 +84,37 @@ couchdb_cluster_settings:
 
 BROKER_URL: 'redis://{{ groups.redis.0 }}:6379/0'
 
-root_email: commcarehq-ops+root@snis-sante.org
-server_email: commcarehq-noreply@snis-sante.org
-server_admin_email: commcarehq-ops+admins@snis-sante.org
-default_from_email: commcarehq-noreply-sic@snis-sante.org
-return_path_email: commcarehq-bounces+sic@snis-sante.org
+root_email: admin@snis-sante.org #commcarehq-ops+root@snis-sante.org
+server_email: admin@snis-sante.org #commcarehq-noreply@snis-sante.org
+server_admin_email: admin@snis-sante.org #commcarehq-ops+admins@snis-sante.org
+default_from_email: admin@snis-sante.org #commcarehq-noreply-sic@snis-sante.org
+return_path_email: admin@snis-sante.org #commcarehq-bounces+sic@snis-sante.org
 support_email: support@snis-sante.org
-probono_support_email: pro-bono@snis-sante.org
-accounts_email: accounts@snis-sante.org
-data_email: datatree@snis-sante.org
-subscription_change_email: accounts+subchange@snis-sante.org
-internal_subscription_change_email: accounts+subchange+internal@snis-sante.org
-billing_email: sales@snis-sante.org
-invoicing_contact_email: billing-support@snis-sante.org
-growth_email: growth@snis-sante.org
-saas_ops_email: saas-ops@snis-sante.org
-saas_reporting_email: saas-reporting@snis-sante.org
-master_list_email: master-list@snis-sante.org
-sales_email: sales@snis-sante.org
-privacy_email: privacy@snis-sante.org
-feedback_email: hq-feedback@snis-sante.org
-eula_change_email: eula-notifications@snis-sante.org
+probono_support_email: admin@snis-sante.org #pro-bono@snis-sante.org
+accounts_email: info@snis-sante.org #accounts@snis-sante.org
+data_email: admin@snis-sante.org #datatree@snis-sante.org
+subscription_change_email: support@snis-sante.org #accounts+subchange@snis-sante.org
+internal_subscription_change_email: support@snis-sante.org #accounts+subchange+internal@snis-sante.org
+billing_email: support@snis-sante.org #sales@snis-sante.org
+invoicing_contact_email: support@snis-sante.org #billing-support@snis-sante.org
+growth_email: admin@snis-sante.org #growth@snis-sante.org
+saas_ops_email: support@snis-sante.org #saas-ops@snis-sante.org
+saas_reporting_email: support@snis-sante.org #saas-reporting@snis-sante.org
+master_list_email: depsi@snis-sante.org #master-list@snis-sante.org
+sales_email: support@snis-sante.org #sales@snis-sante.org
+privacy_email: info@snis-sante.org #privacy@snis-sante.org
+feedback_email: info@snis-sante.org #hq-feedback@snis-sante.org
+eula_change_email: support@snis-sante.org #eula-notifications@snis-sante.org
 contact_email: info@snis-sante.org
-soft_assert_email: commcarehq-ops+soft_asserts@snis-sante.org
-check_s3_backups_email: commcarehq-ops+root@snis-sante.org
-new_domain_email: inquiries@snis-sante.org
+soft_assert_email: support@snis-sante.org #commcarehq-ops+soft_asserts@snis-sante.org
+check_s3_backups_email: admin@snis-sante.org #commcarehq-ops+root@snis-sante.org
+new_domain_email: admin@snis-sante.org #inquiries@snis-sante.org
 
 TWO_FACTOR_GATEWAY_ENABLED: False
 
 ALTERNATE_HOSTS:
   - sic.snis-sante.mg
   - sic.snis-sante.org
-  - mghealthtech.msh.org
-
 
 localsettings:
   ALLOWED_HOSTS:
@@ -124,7 +122,6 @@ localsettings:
     - 102.16.2.238
     - sic.snis-sante.mg
     - sic.snis-sante.org
-    - mghealthtech.msh.org
   #BANK_ADDRESS: { 'first_line': "1 Citizens Drive", 'city': "Riverside", 'region': "RI", 'postal_code': "02915" }
   #BANK_NAME: "RBS Citizens N.A."
   #BANK_SWIFT_CODE: 'CTZIUS33'
@@ -134,7 +131,7 @@ localsettings:
   COUCH_USERNAME: "{{ COUCH_USERNAME }}"
   DEPLOY_MACHINE_NAME: "{{ ansible_hostname }}"
   DEVICE_LOGS_ENABLED: no
-  EMAIL_SMTP_HOST: smtp.snis-sante.org
+  EMAIL_SMTP_HOST: mail.gandi.net
   EMAIL_SMTP_PORT: 587
   EMAIL_USE_TLS: yes
   ENABLE_SOFT_ASSERT_EMAILS: True
