@@ -113,14 +113,22 @@ new_domain_email: admin@snis-sante.org #inquiries@snis-sante.org
 TWO_FACTOR_GATEWAY_ENABLED: False
 
 ALTERNATE_HOSTS:
-  - sic.snis-sante.mg
+#  - sic.snis-sante.mg
   - sic.snis-sante.org
 
 localsettings:
   ALLOWED_HOSTS:
+    - 172.16.88.201
+    - 172.16.88.202
+    - 172.16.88.203
+    - 172.16.88.204
+    - 172.16.88.205
+    - 172.16.88.206
+    - 172.16.88.207
+    - 172.16.88.208
     - 192.168.100.2
     - 102.16.2.238
-    - sic.snis-sante.mg
+#    - sic.snis-sante.mg
     - sic.snis-sante.org
   #BANK_ADDRESS: { 'first_line': "1 Citizens Drive", 'city': "Riverside", 'region': "RI", 'postal_code': "02915" }
   #BANK_NAME: "RBS Citizens N.A."
