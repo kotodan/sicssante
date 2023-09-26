@@ -196,5 +196,6 @@ localsettings:
   SES_CONFIGURATION_SET: sic-email-events
   SNS_EMAIL_EVENT_SECRET: "{{ SNS_EMAIL_EVENT_SECRET }}"
 #  STATIC_ROOT:
+  ENTERPRISE_MODE: True
 
 #commcare_cloud_root_user: ubuntu
