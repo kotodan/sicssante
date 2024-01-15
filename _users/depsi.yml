@@ -1,4 +1,0 @@
-dev_users:
-  present:
-    - depsi  # change this and the corresponding example.pub file
-  absent: []

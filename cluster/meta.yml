@@ -1,5 +1,5 @@
 deploy_env: sic
 env_monitoring_id: sic
 users:
-  - depsi
+  - users
 #slack_alerts_channel: alerts-sic
