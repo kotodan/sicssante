@@ -15,7 +15,7 @@
 
 [db1:vars]
 kafka_broker_id=0
-#elasticsearch_node_name=es0
+elasticsearch_node_name=es0
 zookeeper_server_id=0
 
 [db2]
@@ -23,11 +23,14 @@ zookeeper_server_id=0
 
 [db2:vars]
 kafka_broker_id=1
-#elasticsearch_node_name=es1
+elasticsearch_node_name=es1
 zookeeper_server_id=1
 
 [db3]
 172.16.88.207 hostname=db3 ufw_private_interface=ens18
+
+[db4]
+172.16.88.209 hostname=db4 ufw_private_interface=ens18
 
 #[db3:vars]
 #kafka_broker_id=2
@@ -37,18 +40,11 @@ zookeeper_server_id=1
 [worker3]
 172.16.88.208 hostname=worker3 ufw_private_interface=ens18
 
-[db4]
-172.16.88.209 hostname=db4 ufw_private_interface=ens18
-
-[db4:vars]
-elasticsearch_node_name=es0
-
 [worker4]
-172.16.88.210 hostname=worker4 ufw_private_interface=ens18
+172.16.88.210 hostname=db3 ufw_private_interface=ens18
 
-[minio4]
-172.16.88.211 hostname=minio4 ufw_private_interface=ens18
-
+[db3]
+172.16.88.207 hostname=db3 ufw_private_interface=ens18
 
 [proxy:children]
 proxy1
@@ -98,9 +94,8 @@ db1
 db2
 
 [elasticsearch:children]
-db4
-#db1
-#db2
+db1
+db2
 
 [shared_dir_host:children]
 db2
@@ -113,10 +108,3 @@ controler
 
 [django_manage:children]
 worker1
-
-[minio:children]
-controler
-worker4
-minio4
-db4
-

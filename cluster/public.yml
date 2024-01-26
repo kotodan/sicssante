@@ -49,6 +49,10 @@ es_local_repo: False
 
 #aws_versioning_enabled: false
 
+s3_blob_db_enabled: yes
+s3_blob_db_url: "http://172.16.88.210"
+s3_blob_db_s3_bucket: 'cluster'
+
 filebeat_inputs:
   - path: "{{ log_home }}/{{ deploy_env }}_commcare-nginx_error.log"
     tags: nginx-error
@@ -138,6 +142,9 @@ localsettings:
   #BANK_ADDRESS: { 'first_line': "1 Citizens Drive", 'city': "Riverside", 'region': "RI", 'postal_code': "02915" }
   #BANK_NAME: "RBS Citizens N.A."
   #BANK_SWIFT_CODE: 'CTZIUS33'
+
+  #BLOB_DB_MIGRATING_FROM_FS_TO_S3: True
+
   COUCH_CACHE_DOCS: True
   COUCH_CACHE_VIEWS: True
   COUCH_PASSWORD: "{{ COUCH_PASSWORD }}"
