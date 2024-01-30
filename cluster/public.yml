@@ -16,6 +16,7 @@ elastcsearch_backup_days: 2
 
 #redis_maxmemory: 4gb
 
+nofile_limit: 131070
 
 kafka_version: 3.2.3
 kafka_scala_version: 2.13
@@ -51,7 +52,8 @@ es_local_repo: False
 
 s3_blob_db_enabled: yes
 s3_blob_db_url: "http://172.16.88.210"
-s3_blob_db_s3_bucket: 'cluster'
+#s3_blob_db_s3_bucket: 'cluster'
+s3_blob_db_s3_bucket: 'oldcluster'
 
 filebeat_inputs:
   - path: "{{ log_home }}/{{ deploy_env }}_commcare-nginx_error.log"
@@ -143,7 +145,6 @@ localsettings:
   #BANK_NAME: "RBS Citizens N.A."
   #BANK_SWIFT_CODE: 'CTZIUS33'
 
-  #BLOB_DB_MIGRATING_FROM_FS_TO_S3: True
 
   COUCH_CACHE_DOCS: True
   COUCH_CACHE_VIEWS: True
