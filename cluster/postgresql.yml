@@ -1,5 +1,5 @@
 #DEFAULT_POSTGRESQL_HOST: "127.0.0.1"
-SEPARATE_FORM_PROCESSING_DBS: False
+#SEPARATE_FORM_PROCESSING_DBS: False
 
 pgbouncer_override:
   pgbouncer_default_pool: 290
@@ -10,7 +10,7 @@ pgbouncer_override:
 
 postgres_override:
   postgresql_version: '14'
-  postgresql_max_connections: 300
+  postgresql_max_connections: 900
   postgresql_wal_keep_segments: 0
 
   postgresql_shared_buffers: '8GB'
@@ -29,4 +29,31 @@ dbs:
   ucr:
     host: db1
     query_stats: True
-  form_processing: null
+  auditcare:
+    host: db2
+  formplayer:
+    host: db2
+  synclogs:
+    host: db2
+  repeaters:
+    host: db2
+  #form_processing: null
+  form_processing:
+    proxy:
+      host: db2
+    partitions:
+      p1:
+        shards: [0, 99]
+        host: db2
+      p2:
+        shards: [100, 199]
+        host: db2
+      p3:
+        shards: [200, 299]
+        host: db2
+      p4:
+        shards: [300, 399]
+        host: db2
+      p5:
+        shards: [400, 511]
+        host: db2
