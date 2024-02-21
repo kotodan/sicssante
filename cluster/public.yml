@@ -53,6 +53,7 @@ es_local_repo: False
 s3_blob_db_enabled: yes
 s3_blob_db_url: "http://172.16.88.210"
 #s3_blob_db_s3_bucket: 'cluster'
+#s3_blob_db_s3_bucket: 'oldcluster'
 s3_blob_db_s3_bucket: 'oldcluster'
 
 filebeat_inputs:

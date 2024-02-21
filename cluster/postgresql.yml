@@ -11,11 +11,12 @@ pgbouncer_override:
 postgres_override:
   postgresql_version: '14'
   postgresql_max_connections: 900
-  postgresql_wal_keep_segments: 0
-
+  postgresql_wal_keep_segments: 64
+  #maintenance_work_mem: '1GB'
+  postgresql_max_wal_size: '4GB'
   postgresql_shared_buffers: '8GB'
-  postgresql_work_mem: '32MB'
-  postgresql_wal_buffers: '32MB'
+  postgresql_work_mem: '4GB'
+  postgresql_wal_buffers: '128MB'
 
   postgresql_hba_entries:
     - contype: host
@@ -26,34 +27,82 @@ postgres_override:
 dbs:
   main:
     host: db2
+    pgbouncer_endpoint: db2
+    pgbouncer_pool_size: 10
+    pgbouncer_hosts:
+      - db2
+        #query_stats: True
   ucr:
     host: db1
+    pgbouncer_endpoint: db1
+    pgbouncer_pool_size: 10
+    pgbouncer_hosts:
+      - db1
     query_stats: True
   auditcare:
+    pgbouncer_endpoint: db2
+    pgbouncer_pool_size: 10
+    pgbouncer_hosts:
+      - db2
     host: db2
   formplayer:
+    pgbouncer_endpoint: db2
+    pgbouncer_pool_size: 10
+    pgbouncer_hosts:
+      - db2
     host: db2
   synclogs:
+    pgbouncer_endpoint: db2
+    pgbouncer_pool_size: 10
+    pgbouncer_hosts:
+      - db2
     host: db2
   repeaters:
+    pgbouncer_endpoint: db2
+    pgbouncer_pool_size: 10
+    pgbouncer_hosts:
+      - db2
     host: db2
   #form_processing: null
   form_processing:
     proxy:
       host: db2
+      pgbouncer_endpoint: db2
+      pgbouncer_hosts:
+        - db2
     partitions:
       p1:
         shards: [0, 99]
         host: db2
+        pgbouncer_endpoint: db2
+        pgbouncer_hosts:
+          - db2
+            #query_stats: True
       p2:
         shards: [100, 199]
         host: db2
+        pgbouncer_endpoint: db2
+        pgbouncer_hosts:
+          - db2
+            #query_stats: True
       p3:
         shards: [200, 299]
         host: db2
+        pgbouncer_endpoint: db2
+        pgbouncer_hosts:
+          - db2
+            #query_stats: True
       p4:
         shards: [300, 399]
         host: db2
+        pgbouncer_endpoint: db2
+        pgbouncer_hosts:
+          - db2
+            #query_stats: True
       p5:
         shards: [400, 511]
         host: db2
+        pgbouncer_endpoint: db2
+        pgbouncer_hosts:
+          - db2
+            #query_stats: True
