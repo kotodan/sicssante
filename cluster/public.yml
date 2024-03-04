@@ -84,10 +84,9 @@ couchdb2:
   password: "{{ COUCH_PASSWORD }}"
 couchdb_version: '3.3.1'
 couchdb_rexi_use_kill_all: 'true'
-#couchdb_use_haproxy: True
-
-#haproxy_version: 2.4
-
+couchdb2_client_max_body_size: 100M
+couchdb_os_process_limit: 1000
+couchdb_reduce_limit: False
 couchdb_cluster_settings:
   q: 8
   r: 2
