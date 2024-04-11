@@ -4,42 +4,46 @@ formplayer_g1heapregionsize: "1m"
 management_commands:
   worker2:
     run_pillow_retry_queue:
+    queue_schedule_instances:
+    handle_survey_actions:
+    run_sms_queue:
+    run_submission_reprocessing_queue:
 celery_processes:
   worker2:
     repeat_record_queue:
-      concurrency: 1
+      concurrency: 2
     export_download_queue:
-      concurrency: 1
+      concurrency: 3
     case_import_queue:
-      concurrency: 1
+      concurrency: 3
     reminder_case_update_queue:
       pooling: gevent
       concurrency: 10
     linked_domain_queue:
-      concurrency: 1
+      concurrency: 2
     background_queue:
-      concurrency: 1
+      concurrency: 2
     case_rule_queue:
-      concurrency: 1
+      concurrency: 2
     analytics_queue:
       pooling: gevent
       concurrency: 2
     celery:
       pooling: gevent
-      concurrency: 1
+      concurrency: 2
     celery_periodic:
       pooling: gevent
-      concurrency: 1
+      concurrency: 2
     email_queue:
       pooling: gevent
       concurrency: 10
     reminder_rule_queue:
-      concurrency: 1
+      concurrency: 2
     malt_generation_queue:
       concurrency: 2
     beat: {}
     saved_exports_queue:
-      concurrency: 1
+      concurrency: 5
     flower: {}
 pillows:
   worker1:
