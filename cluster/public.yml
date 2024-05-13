@@ -39,21 +39,25 @@ postgres_s3: True
 blobdb_s3: True
 couch_s3: True
 
+postgresql_backup_days: 1
+postgresql_backup_weeks: 1
+couchdb_backup_days: 1
+couchdb_backup_weeks: 1
+
 es_local_repo: False
 
 #aws_region: ch-dk-2
-#aws_endpoint: https://sos-ch-dk-2.exo.io
-#es_snapshot_bucket:   commcare-almanach-backup
-#postgres_snapshot_bucket: commcare-almanach-backup
+aws_endpoint: http://172.16.88.210
+#es_snapshot_bucket:   es-backup
+postgres_snapshot_bucket: postgres-backup
 #blobdb_snapshot_bucket: commcare-almanach-backup
-#couchdb_snapshot_bucket: commcare-almanach-backup
+couchdb_snapshot_bucket: couchdb-backup
 
 #aws_versioning_enabled: false
 
 s3_blob_db_enabled: yes
 s3_blob_db_url: "http://172.16.88.210"
-#s3_blob_db_s3_bucket: 'cluster'
-#s3_blob_db_s3_bucket: 'oldcluster'
+#s3_blob_db_s3_bucket: 'blob-bucket'
 s3_blob_db_s3_bucket: 'oldcluster'
 
 filebeat_inputs:
@@ -137,6 +141,9 @@ localsettings:
     - 172.16.88.206
     - 172.16.88.207
     - 172.16.88.208
+    - 172.16.88.209
+    - 172.16.88.210
+    - 172.16.88.211
     - 192.168.100.2
     - 102.16.205.234
 #    - sic.snis-sante.mg
