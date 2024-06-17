@@ -1,5 +1,5 @@
 DATADOG_ENABLED: False
-
+DD_TRACE_ENABLED: False
 #wipe_environment_enabled: True
 
 elasticsearch_endpoint: '{{ groups.elasticsearch.0 }}'
@@ -58,8 +58,8 @@ check_s3_backups_email: ["mailtodemis08@gmail.com","mrakotoniaina@usaidaccess.or
 
 s3_blob_db_enabled: yes
 s3_blob_db_url: "http://172.16.88.210"
-#s3_blob_db_s3_bucket: 'blob-bucket'
-s3_blob_db_s3_bucket: 'oldcluster'
+s3_blob_db_s3_bucket: 'blob-bucket'
+#s3_blob_db_s3_bucket: 'oldcluster'
 
 filebeat_inputs:
   - path: "{{ log_home }}/{{ deploy_env }}_commcare-nginx_error.log"
