@@ -1,6 +1,7 @@
 DATADOG_ENABLED: False
 DD_TRACE_ENABLED: False
 #wipe_environment_enabled: True
+RESTRICT_DOMAIN_CREATION: yes
 
 elasticsearch_endpoint: '{{ groups.elasticsearch.0 }}'
 elasticsearch_memory: '4096m'
@@ -32,7 +33,7 @@ formplayer_forward_ip_proxy: true
 
 ssh_allow_password: False
 
-backup_blobdb: False
+backup_blobdb: True
 backup_postgres: plain
 backup_couch: True
 
@@ -60,7 +61,6 @@ check_s3_backups_email: ["mailtodemis08@gmail.com","mrakotoniaina@usaidaccess.or
 s3_blob_db_enabled: yes
 s3_blob_db_url: "http://172.16.88.210"
 s3_blob_db_s3_bucket: 'blob-bucket'
-#s3_blob_db_s3_bucket: 'oldcluster'
 
 filebeat_inputs:
   - path: "{{ log_home }}/{{ deploy_env }}_commcare-nginx_error.log"
