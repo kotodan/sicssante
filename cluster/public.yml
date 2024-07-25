@@ -1,5 +1,6 @@
 DATADOG_ENABLED: False
 DD_TRACE_ENABLED: False
+prometheus_monitoring_enabled: True
 #wipe_environment_enabled: True
 RESTRICT_DOMAIN_CREATION: yes
 
