@@ -28,6 +28,7 @@ kafka_log_message_format_version: 3.2
 
 zookeeper_version: 3.7.1
 zookeeper_download_sha1: sha512:9103628a50745fa1a289bca666fda4a9c08ec17c55cf13e66887e7ba76e93dbae60a1f1ffd6c10798be3a16069344ecbc00cebb29bf03d9cd7096ccd098ed011
+zookeeper_cluster: True
 
 formplayer_java_version: "{{ java_17_bin_path }}/java"
 formplayer_forward_ip_proxy: true
@@ -48,7 +49,7 @@ postgres_s3: False
 #couchdb_backup_weeks: 1
 
 es_local_repo: False
-check_s3_backups_email: ["mailtodemis08@gmail.com","mrakotoniaina@usaidaccess.org"]
+check_s3_backups_email: ["admin@snis-sante.org","xmnirina@gmail.com"]
 
 #aws_region: ch-dk-2
 #aws_endpoint: http://172.16.88.210

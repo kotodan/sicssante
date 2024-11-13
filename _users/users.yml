@@ -2,5 +2,4 @@ dev_users:
   present:
     - depsi
     - dimagi
-    - demis
   absent: []
