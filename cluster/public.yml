@@ -103,31 +103,31 @@ couchdb_cluster_settings:
 
 BROKER_URL: 'redis://{{ groups.redis.0 }}:6379/0'
 
-root_email: admin@snis-sante.org
-server_email: admin@snis-sante.org
-server_admin_email: admin@snis-sante.org
-default_from_email: admin@snis-sante.org
-return_path_email: admin@snis-sante.org
-support_email: support@snis-sante.org
-probono_support_email: admin@snis-sante.org
-accounts_email: info@snis-sante.org
-data_email: admin@snis-sante.org
-subscription_change_email: support@snis-sante.org
-internal_subscription_change_email: support@snis-sante.org
-billing_email: support@snis-sante.org
-invoicing_contact_email: support@snis-sante.org
-growth_email: admin@snis-sante.org
-saas_ops_email: support@snis-sante.org
-saas_reporting_email: support@snis-sante.org
-master_list_email: depsi@snis-sante.org
-sales_email: support@snis-sante.org
-privacy_email: info@snis-sante.org
-feedback_email: info@snis-sante.org
-eula_change_email: support@snis-sante.org
-contact_email: info@snis-sante.org
-soft_assert_email: support@snis-sante.org
+root_email: support@snis-mg.org
+server_email: asupport@snis-mg.org
+server_admin_email: support@snis-mg.org
+default_from_email: asupport@snis-mg.org
+return_path_email: support@snis-mg.org
+support_email: support@snis-mg.org
+probono_support_email: support@snis-mg.org
+accounts_email: support@snis-mg.org
+data_email: support@snis-mg.org
+subscription_change_email: ssupport@snis-mg.org
+internal_subscription_change_email: support@snis-mg.org
+billing_email: support@snis-mg.org
+invoicing_contact_email: support@snis-mg.org
+growth_email: asupport@snis-mg.org
+saas_ops_email: ssupport@snis-mg.org
+saas_reporting_email: ssupport@snis-mg.org
+master_list_email: support@snis-mg.org
+sales_email: support@snis-mg.org
+privacy_email: support@snis-mg.org
+feedback_email: isupport@snis-mg.org
+eula_change_email: support@snis-mg.org
+contact_email: support@snis-mg.org
+soft_assert_email: support@snis-mg.org
 #check_s3_backups_email: admin@snis-sante.org
-new_domain_email: admin@snis-sante.org
+new_domain_email: support@snis-mg.org
 
 TWO_FACTOR_GATEWAY_ENABLED: False
 
